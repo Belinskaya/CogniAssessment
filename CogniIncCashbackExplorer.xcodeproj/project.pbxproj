@@ -31,6 +31,7 @@
 		4A41EC82213F2A5B007AB834 /* UITextView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Utils.swift"; sourceTree = "<group>"; };
 		4A41EC84213F39B5007AB834 /* VenuesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesListViewController.swift; sourceTree = "<group>"; };
 		4A41EC86213F51AA007AB834 /* ExplorerPinAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorerPinAnnotationView.swift; sourceTree = "<group>"; };
+		4A41EC8A21404BD5007AB834 /* CogniIncCashbackExplorer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CogniIncCashbackExplorer.entitlements; sourceTree = "<group>"; };
 		4A58431C213ED3C600D37219 /* CogniIncCashbackExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CogniIncCashbackExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A58431F213ED3C600D37219 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A584324213ED3C600D37219 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,6 +90,7 @@
 		4A58431E213ED3C600D37219 /* CogniIncCashbackExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				4A41EC8A21404BD5007AB834 /* CogniIncCashbackExplorer.entitlements */,
 				4A584342213EF6BE00D37219 /* Utils */,
 				4A58433E213EF5B900D37219 /* Categories */,
 				4A58433B213EF15900D37219 /* UI */,
@@ -192,6 +194,11 @@
 				TargetAttributes = {
 					4A58431B213ED3C600D37219 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -235,10 +242,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CogniIncCashbackExplorer/Pods-CogniIncCashbackExplorer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Locksmith/Locksmith.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Locksmith.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -426,6 +435,7 @@
 			baseConfigurationReference = 967C0F7756DDC09AB6E25415 /* Pods-CogniIncCashbackExplorer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CogniIncCashbackExplorer/CogniIncCashbackExplorer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X93LWC49WV;
 				INFOPLIST_FILE = CogniIncCashbackExplorer/Info.plist;
@@ -445,6 +455,7 @@
 			baseConfigurationReference = 29D8D4E7E3FEB27C08C57151 /* Pods-CogniIncCashbackExplorer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CogniIncCashbackExplorer/CogniIncCashbackExplorer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X93LWC49WV;
 				INFOPLIST_FILE = CogniIncCashbackExplorer/Info.plist;

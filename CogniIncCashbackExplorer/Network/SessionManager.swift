@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import Locksmith
 import MapKit
 
 struct Keys {
@@ -18,6 +19,7 @@ struct Keys {
     static let long = "long"
     static let cashback = "cashback"
     static let token = "Token"
+    static let tokenCreationDate = "tokenCreationDate"
     static let errors = "errors"
     static let details = "details"
     static let venue = "venue"
@@ -26,6 +28,7 @@ struct Keys {
 
 struct Constants {
     static let defaultCity = "New York"
+    static let thirtyDays: Double = 60 * 60 * 24 * 30
     
     struct ErrorMessages {
         static let genericTitle = ""
@@ -57,6 +60,25 @@ class SessionManager {
     }
     
     func singIn(with user: User, completionHandler: ((LoginResult)->Void)? = nil) {
+        if let tokenData = Locksmith.loadDataForUserAccount(userAccount: user.key),
+            let savedToken = tokenData[Keys.token] as? String,
+            let creationDate = tokenData[Keys.tokenCreationDate] as? Date {
+            if Date().timeIntervalSince(creationDate) > Constants.thirtyDays {
+                //update token
+                update(token: savedToken, for: user, completionHandler: completionHandler)
+                return
+            }
+            self.token = savedToken
+            if let completionHandler = completionHandler {
+                completionHandler(.sussess)
+            }
+            return
+        }
+        // new user
+        createNewUser(user, completionHandler: completionHandler)
+    }
+    
+    private func createNewUser(_ user: User, completionHandler: ((LoginResult)->Void)? = nil) {
         let body: Parameters = [Keys.name: user.name, Keys.email: user.email]
         Alamofire.request(baseURL + "/users", method: .post, parameters: body, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
             guard response.response?.statusCode == 201 else {
@@ -69,11 +91,31 @@ class SessionManager {
                 }
                 return
             }
-            if let responseToken = response.response?.allHeaderFields[Keys.token] as? String {
-                UserDefaults.standard.set(responseToken, forKey: user.email)
-                self.token = responseToken
-                //TODO: delete this  later
-                UserDefaults.standard.set(responseToken, forKey: Keys.token)
+            if self.saveToken(from: response.response, withKey: user.key) {
+                if let completionHandler = completionHandler {
+                    completionHandler(.sussess)
+                }
+            } else {
+                if let completionHandler = completionHandler {
+                    completionHandler(.failure(error: [.unknown]))
+                }
+            }
+        }
+    }
+    
+    private func update(token: String, for user: User, completionHandler: ((LoginResult)->Void)? = nil) {
+        let body: Parameters = [Keys.name: user.name, Keys.email: user.email]
+        let headers: HTTPHeaders = [Keys.token: token]
+        print(body)
+        Alamofire.request(baseURL + "/login", method: .post, parameters: body, encoding: JSONEncoding.default, headers: headers).responseString { response in
+            guard response.response?.statusCode == 202 else {
+                if let completionHandler = completionHandler {
+                    completionHandler(.failure(error: [.unknown]))
+                }
+                return
+            }
+            
+            if self.saveToken(from: response.response, withKey: user.key) {
                 if let completionHandler = completionHandler {
                     completionHandler(.sussess)
                 }
@@ -160,8 +202,16 @@ class SessionManager {
         }
     }
     
-    func login(with user: User, completionHandler: (()->Void)? = nil) {
+    private func saveToken(from response: HTTPURLResponse?, withKey key: String) -> Bool {
+        guard let response = response,
+            let responseToken = response.allHeaderFields[Keys.token] as? String else { return false }
         
+        self.token = responseToken
+        
+        let tokenData: [String: Any] = [Keys.token: "responseToken", Keys.tokenCreationDate: Date()]
+        try? Locksmith.saveData(data: tokenData, forUserAccount: key)
+        
+        return true
     }
     
     private func parseUserError(in json: Any) -> CashbackExplorerErrors {

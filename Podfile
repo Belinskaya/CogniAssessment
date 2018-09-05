@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'CogniIncCashbackExplorer' do
     pod 'Alamofire', '~> 4.7'
+    pod 'Locksmith'
 end

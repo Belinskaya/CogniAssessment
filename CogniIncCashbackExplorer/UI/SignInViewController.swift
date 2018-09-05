@@ -36,7 +36,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         activityIndicator.startAnimating()
         SessionManager.shared.singIn(with: User(name: name, email: email)) { (result) in
             self.activityIndicator.stopAnimating()
-            self.activityIndicator.isHidden = false
+            self.activityIndicator.isHidden = true
             switch result {
             case .sussess:
                 self.performSegue(withIdentifier: Segues.showVenues, sender: nil)

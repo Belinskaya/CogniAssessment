@@ -13,6 +13,10 @@ struct User {
     let name: String
     let email: String
     
+    var key: String {
+        return name + "_" + email
+    }
+    
     init(name: String, email: String, userId: UUID? = nil) {
         self.name = name
         self.email = email
