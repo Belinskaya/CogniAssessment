@@ -7,21 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A41EC83213F2A5B007AB834 /* UITextView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A41EC82213F2A5B007AB834 /* UITextView+Utils.swift */; };
+		4A41EC85213F39B5007AB834 /* VenuesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A41EC84213F39B5007AB834 /* VenuesListViewController.swift */; };
+		4A41EC87213F51AA007AB834 /* ExplorerPinAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A41EC86213F51AA007AB834 /* ExplorerPinAnnotationView.swift */; };
 		4A584320213ED3C600D37219 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A58431F213ED3C600D37219 /* AppDelegate.swift */; };
-		4A584322213ED3C600D37219 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A584321213ED3C600D37219 /* ViewController.swift */; };
 		4A584325213ED3C600D37219 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A584323213ED3C600D37219 /* Main.storyboard */; };
 		4A584327213ED3C700D37219 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A584326213ED3C700D37219 /* Assets.xcassets */; };
 		4A58432A213ED3C700D37219 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A584328213ED3C700D37219 /* LaunchScreen.storyboard */; };
+		4A584333213ED48100D37219 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A584332213ED48100D37219 /* User.swift */; };
+		4A584335213ED48B00D37219 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A584334213ED48B00D37219 /* Venue.swift */; };
+		4A584337213EDF8A00D37219 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A584336213EDF8A00D37219 /* SessionManager.swift */; };
+		4A58433A213EEB9900D37219 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A584339213EEB9900D37219 /* Errors.swift */; };
+		4A58433D213EF17100D37219 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A58433C213EF17100D37219 /* SignInViewController.swift */; };
+		4A584341213EF60100D37219 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A584340213EF60100D37219 /* UIViewController+Utils.swift */; };
+		4A584344213EF6C800D37219 /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A584343213EF6C800D37219 /* Segues.swift */; };
+		4A9F9F21213F006C00BDDB7A /* NewVenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F9F20213F006C00BDDB7A /* NewVenueViewController.swift */; };
+		5FFFA427753D078606738E03 /* Pods_CogniIncCashbackExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44CDA792E64699F11ACDA8A1 /* Pods_CogniIncCashbackExplorer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29D8D4E7E3FEB27C08C57151 /* Pods-CogniIncCashbackExplorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CogniIncCashbackExplorer.release.xcconfig"; path = "Pods/Target Support Files/Pods-CogniIncCashbackExplorer/Pods-CogniIncCashbackExplorer.release.xcconfig"; sourceTree = "<group>"; };
+		44CDA792E64699F11ACDA8A1 /* Pods_CogniIncCashbackExplorer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CogniIncCashbackExplorer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A41EC82213F2A5B007AB834 /* UITextView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Utils.swift"; sourceTree = "<group>"; };
+		4A41EC84213F39B5007AB834 /* VenuesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesListViewController.swift; sourceTree = "<group>"; };
+		4A41EC86213F51AA007AB834 /* ExplorerPinAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorerPinAnnotationView.swift; sourceTree = "<group>"; };
 		4A58431C213ED3C600D37219 /* CogniIncCashbackExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CogniIncCashbackExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A58431F213ED3C600D37219 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4A584321213ED3C600D37219 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4A584324213ED3C600D37219 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A584326213ED3C700D37219 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A584329213ED3C700D37219 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A58432B213ED3C700D37219 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A584332213ED48100D37219 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4A584334213ED48B00D37219 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		4A584336213EDF8A00D37219 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		4A584339213EEB9900D37219 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		4A58433C213EF17100D37219 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		4A584340213EF60100D37219 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
+		4A584343213EF6C800D37219 /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
+		4A9F9F20213F006C00BDDB7A /* NewVenueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVenueViewController.swift; sourceTree = "<group>"; };
+		967C0F7756DDC09AB6E25415 /* Pods-CogniIncCashbackExplorer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CogniIncCashbackExplorer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CogniIncCashbackExplorer/Pods-CogniIncCashbackExplorer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +53,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FFFA427753D078606738E03 /* Pods_CogniIncCashbackExplorer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18F843738E4675A4E4B62208 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44CDA792E64699F11ACDA8A1 /* Pods_CogniIncCashbackExplorer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4A584313213ED3C600D37219 = {
 			isa = PBXGroup;
 			children = (
 				4A58431E213ED3C600D37219 /* CogniIncCashbackExplorer */,
 				4A58431D213ED3C600D37219 /* Products */,
+				528FE0D6C8835C6C0B928BF8 /* Pods */,
+				18F843738E4675A4E4B62208 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +89,73 @@
 		4A58431E213ED3C600D37219 /* CogniIncCashbackExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				4A584342213EF6BE00D37219 /* Utils */,
+				4A58433E213EF5B900D37219 /* Categories */,
+				4A58433B213EF15900D37219 /* UI */,
+				4A584338213EEB8B00D37219 /* Network */,
+				4A584331213ED47400D37219 /* Model */,
 				4A58431F213ED3C600D37219 /* AppDelegate.swift */,
-				4A584321213ED3C600D37219 /* ViewController.swift */,
 				4A584323213ED3C600D37219 /* Main.storyboard */,
 				4A584326213ED3C700D37219 /* Assets.xcassets */,
 				4A584328213ED3C700D37219 /* LaunchScreen.storyboard */,
 				4A58432B213ED3C700D37219 /* Info.plist */,
 			);
 			path = CogniIncCashbackExplorer;
+			sourceTree = "<group>";
+		};
+		4A584331213ED47400D37219 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4A584332213ED48100D37219 /* User.swift */,
+				4A584334213ED48B00D37219 /* Venue.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4A584338213EEB8B00D37219 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4A584336213EDF8A00D37219 /* SessionManager.swift */,
+				4A584339213EEB9900D37219 /* Errors.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4A58433B213EF15900D37219 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4A58433C213EF17100D37219 /* SignInViewController.swift */,
+				4A9F9F20213F006C00BDDB7A /* NewVenueViewController.swift */,
+				4A41EC84213F39B5007AB834 /* VenuesListViewController.swift */,
+				4A41EC86213F51AA007AB834 /* ExplorerPinAnnotationView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		4A58433E213EF5B900D37219 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4A584340213EF60100D37219 /* UIViewController+Utils.swift */,
+				4A41EC82213F2A5B007AB834 /* UITextView+Utils.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		4A584342213EF6BE00D37219 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4A584343213EF6C800D37219 /* Segues.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		528FE0D6C8835C6C0B928BF8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				967C0F7756DDC09AB6E25415 /* Pods-CogniIncCashbackExplorer.debug.xcconfig */,
+				29D8D4E7E3FEB27C08C57151 /* Pods-CogniIncCashbackExplorer.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A58432E213ED3C700D37219 /* Build configuration list for PBXNativeTarget "CogniIncCashbackExplorer" */;
 			buildPhases = (
+				4F47D6FD74CF82D7C2B4E214 /* [CP] Check Pods Manifest.lock */,
 				4A584318213ED3C600D37219 /* Sources */,
 				4A584319213ED3C600D37219 /* Frameworks */,
 				4A58431A213ED3C600D37219 /* Resources */,
+				3D74438D48A9004867892081 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +226,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3D74438D48A9004867892081 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CogniIncCashbackExplorer/Pods-CogniIncCashbackExplorer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CogniIncCashbackExplorer/Pods-CogniIncCashbackExplorer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F47D6FD74CF82D7C2B4E214 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CogniIncCashbackExplorer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4A584318213ED3C600D37219 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A584322213ED3C600D37219 /* ViewController.swift in Sources */,
+				4A58433D213EF17100D37219 /* SignInViewController.swift in Sources */,
+				4A584335213ED48B00D37219 /* Venue.swift in Sources */,
+				4A584341213EF60100D37219 /* UIViewController+Utils.swift in Sources */,
+				4A9F9F21213F006C00BDDB7A /* NewVenueViewController.swift in Sources */,
+				4A41EC87213F51AA007AB834 /* ExplorerPinAnnotationView.swift in Sources */,
+				4A41EC85213F39B5007AB834 /* VenuesListViewController.swift in Sources */,
+				4A584344213EF6C800D37219 /* Segues.swift in Sources */,
 				4A584320213ED3C600D37219 /* AppDelegate.swift in Sources */,
+				4A584337213EDF8A00D37219 /* SessionManager.swift in Sources */,
+				4A41EC83213F2A5B007AB834 /* UITextView+Utils.swift in Sources */,
+				4A58433A213EEB9900D37219 /* Errors.swift in Sources */,
+				4A584333213ED48100D37219 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +423,7 @@
 		};
 		4A58432F213ED3C700D37219 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 967C0F7756DDC09AB6E25415 /* Pods-CogniIncCashbackExplorer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +442,7 @@
 		};
 		4A584330213ED3C700D37219 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29D8D4E7E3FEB27C08C57151 /* Pods-CogniIncCashbackExplorer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
