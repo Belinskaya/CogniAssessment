@@ -48,13 +48,14 @@ class NewVenueViewController: UITableViewController, UITextFieldDelegate {
         latTextField.delegate = self
         
         let leftButtonDescription: TextFieldAccessoryButtonDescription = (title: "+/-", target: self, action: #selector(leftAccessoryButtonTapped))
-        let rightButtonDescription: TextFieldAccessoryButtonDescription = (title: "Done", target: self, action: #selector(rightAccessoryButtonTapped))
+        let rightNextButtonDescription: TextFieldAccessoryButtonDescription = (title: "Next", target: self, action: #selector(rightAccessoryButtonTapped))
+        let rightDoneButtonDescription: TextFieldAccessoryButtonDescription = (title: "Done", target: self, action: #selector(rightAccessoryButtonTapped))
         
-        latTextField.addDoneButton(leftButton: leftButtonDescription, rightButton: rightButtonDescription)
+        latTextField.addDoneButton(leftButton: leftButtonDescription, rightButton: rightNextButtonDescription)
         longTextField.delegate = self
-        longTextField.addDoneButton(leftButton: leftButtonDescription, rightButton:  rightButtonDescription)
+        longTextField.addDoneButton(leftButton: leftButtonDescription, rightButton:  rightNextButtonDescription)
         cashbackTextField.delegate = self
-        cashbackTextField.addDoneButton(leftButton: nil, rightButton: rightButtonDescription)
+        cashbackTextField.addDoneButton(leftButton: nil, rightButton: rightDoneButtonDescription)
         
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Use my Location", style: .plain, target: self, action: #selector(useMyLocationTapped))
