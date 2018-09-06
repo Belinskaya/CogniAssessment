@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 protocol NewVenueViewControllerDelegate: class {
     func newVenueWasAdded(_ venue: Venue)
@@ -55,7 +56,9 @@ class NewVenueViewController: UITableViewController, UITextFieldDelegate {
         cashbackTextField.delegate = self
         cashbackTextField.addDoneButton(leftButton: nil, rightButton: rightButtonDescription)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Use my Location", style: .plain, target: self, action: #selector(useMyLocationTapped))
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Use my Location", style: .plain, target: self, action: #selector(useMyLocationTapped))
+        }
         
         acivityIndicator.isHidden = true
         

@@ -26,6 +26,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func signInTapped(_ sender: Any) {
         guard let name = nameTextField.text, let email = emailTextField.text else { return }
+        invalidNameLabel.isHidden = true
+        invalidEmailError.isHidden = true
+        signinButton.isHidden = true
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         SessionManager.shared.singIn(with: User(name: name, email: email)) { (result) in
@@ -35,6 +38,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             case .sussess:
                 self.performSegue(withIdentifier: Segues.showVenues, sender: nil)
             case .failure(error: let loginError):
+                self.signinButton.isHidden = false
                 self.showError(for: loginError)
             }
         }

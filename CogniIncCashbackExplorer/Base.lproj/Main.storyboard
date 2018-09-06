@@ -111,7 +111,7 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0wZ-GG-JS7">
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                             </mapView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jTt-UT-ybK">
+                            <searchBar contentMode="redraw" placeholder="City Name" translatesAutoresizingMaskIntoConstraints="NO" id="jTt-UT-ybK">
                                 <rect key="frame" x="0.0" y="64" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>

@@ -18,8 +18,6 @@ class ExplorerPinAnnotationView: MKAnnotationView {
         guard let venueAnnotation = annotation as? Venue else { return }
         
         canShowCallout = true
-        //rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-        
         cashBack = venueAnnotation.cashback
         
         image = #imageLiteral(resourceName: "pin")
