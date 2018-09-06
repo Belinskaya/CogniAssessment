@@ -3,8 +3,8 @@
 100% swift implementation of [Cogni, Inc Assesment](https://github.com/CogniInc/cashback-explorer-api)
 
 Used Pods:
-* Alamofire
-* Locksmith
+* [Alamofire](https://github.com/Alamofire/Alamofire)
+* [Locksmith](https://github.com/matthewpalmer/Locksmith)
 
 ##### Signin Screen:
 ![signin](https://user-images.githubusercontent.com/8221314/45165354-aaac7200-b1c2-11e8-8f08-3baa80d3313c.gif)
