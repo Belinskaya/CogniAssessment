@@ -70,26 +70,17 @@
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="GzU-tT-2Am">
                                 <rect key="frame" x="169" y="315.5" width="37" height="37"/>
-                                <color key="color" red="0.42352941179999998" green="0.47843137250000001" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pd5-mm-VMh">
-                                <rect key="frame" x="289" y="617" width="50" height="30"/>
-                                <state key="normal" title="Bypass"/>
-                                <connections>
-                                    <action selector="bypassPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fXT-Ya-v0P"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.19215686274509802" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Pd5-mm-VMh" secondAttribute="bottom" constant="20" id="0LA-Kt-nCX"/>
                             <constraint firstItem="8hb-Zg-B7s" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-150" id="1Ku-K4-Qxu"/>
                             <constraint firstItem="EKq-oE-Ptu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4zg-LI-5PF"/>
                             <constraint firstItem="qL9-yJ-6Ch" firstAttribute="top" secondItem="EKq-oE-Ptu" secondAttribute="bottom" constant="20" id="ALQ-cg-cqS"/>
                             <constraint firstItem="EKq-oE-Ptu" firstAttribute="top" secondItem="8hb-Zg-B7s" secondAttribute="bottom" constant="20" id="HgQ-yz-3fC"/>
                             <constraint firstItem="GzU-tT-2Am" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b76-Th-JVl"/>
                             <constraint firstItem="qL9-yJ-6Ch" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bJ0-tr-ebG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pd5-mm-VMh" secondAttribute="trailing" constant="36" id="gxJ-dP-xQQ"/>
                             <constraint firstItem="8hb-Zg-B7s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n3v-yk-DYL"/>
                             <constraint firstItem="GzU-tT-2Am" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nQU-6X-xFI"/>
                         </constraints>
@@ -160,7 +151,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="67p-bB-gC1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.19215686274509802" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection id="BXK-HW-5eD">
                                 <cells>

@@ -24,12 +24,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         activityIndicator.isHidden = true
     }
     
-    // TODO: delete this later
-    @IBAction func bypassPressed(_ sender: Any) {
-        SessionManager.shared.bypass()
-        performSegue(withIdentifier: Segues.showVenues, sender: nil)
-    }
-    
     @IBAction func signInTapped(_ sender: Any) {
         guard let name = nameTextField.text, let email = emailTextField.text else { return }
         activityIndicator.isHidden = false

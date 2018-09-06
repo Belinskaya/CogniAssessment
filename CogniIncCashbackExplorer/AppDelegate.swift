@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setupUITheme()
         return true
     }
 
@@ -39,6 +40,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func setupUITheme() {
+        // To change background colour.
+        UINavigationBar.appearance().barTintColor = .init(red: 34.0/255, green: 49.0/255, blue: 63.0/255, alpha: 1.0)
+        
+        // To change colour of tappable items.
+        UINavigationBar.appearance().tintColor = .white
+        
+        // To apply textAttributes to title i.e. colour, font etc.
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor.white]
+        // To control navigation bar's translucency.
+        UINavigationBar.appearance().isTranslucent = false
     }
 
 

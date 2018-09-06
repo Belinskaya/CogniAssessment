@@ -8,6 +8,14 @@
 
 import Foundation
 
+typealias LoginCompletionHadler = (LoginResult) -> Void
+typealias CashbackExplorerCompletionHadler = (CashbackExplorerResult) -> Void
+
+enum LoginActionType: String {
+    case signin = "/users"
+    case update = "/login"
+}
+
 enum LoginResult {
     case sussess
     case failure(error: [CashbackExplorerErrors])

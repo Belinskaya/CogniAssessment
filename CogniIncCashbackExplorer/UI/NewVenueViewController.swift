@@ -33,17 +33,27 @@ class NewVenueViewController: UITableViewController, UITextFieldDelegate {
     
     private var allTextFields: [UITextField]?
     
+    private var firstResponder: UITextField? {
+        return allTextFields?.filter({ textField -> Bool in
+            return textField.isFirstResponder
+        }).first
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         nameTextField.delegate = self
         cityTextField.delegate = self
         latTextField.delegate = self
-        latTextField.addDoneButton(onDone: (target: self, action: #selector(accessoryButtonTapped)))
+        
+        let leftButtonDescription: TextFieldAccessoryButtonDescription = (title: "+/-", target: self, action: #selector(leftAccessoryButtonTapped))
+        let rightButtonDescription: TextFieldAccessoryButtonDescription = (title: "Done", target: self, action: #selector(rightAccessoryButtonTapped))
+        
+        latTextField.addDoneButton(leftButton: leftButtonDescription, rightButton: rightButtonDescription)
         longTextField.delegate = self
-        longTextField.addDoneButton(onDone: (target: self, action: #selector(accessoryButtonTapped)))
+        longTextField.addDoneButton(leftButton: leftButtonDescription, rightButton:  rightButtonDescription)
         cashbackTextField.delegate = self
-        cashbackTextField.addDoneButton(onDone: (target: self, action: #selector(accessoryButtonTapped)))
+        cashbackTextField.addDoneButton(leftButton: nil, rightButton: rightButtonDescription)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Use my Location", style: .plain, target: self, action: #selector(useMyLocationTapped))
         
@@ -63,12 +73,14 @@ class NewVenueViewController: UITableViewController, UITextFieldDelegate {
             let cashback = Float(cashbackText) else { return }
         
         hideAllErrorLabels()
+        submitButton.isHidden = true
         acivityIndicator.isHidden = false
         acivityIndicator.startAnimating()
         let newVenue = Venue(name: name, city: city, cashback: cashback, lat: lat, long: long)
         SessionManager.shared.addNewVenue(newVenue) { result in
             self.acivityIndicator.stopAnimating()
             self.acivityIndicator.isHidden = true
+            self.submitButton.isHidden = false
             switch result {
             case .sussess(data: let venues):
                 self.delegate?.newVenueWasAdded(venues?.first ?? newVenue)
@@ -78,10 +90,8 @@ class NewVenueViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
-    @objc private func accessoryButtonTapped() {
-        guard let firstResponder = allTextFields?.filter({ textField -> Bool in
-            return textField.isFirstResponder
-        }).first else { return }
+    @objc private func rightAccessoryButtonTapped() {
+        guard let firstResponder = firstResponder else { return }
         
         if firstResponder == latTextField {
             longTextField.becomeFirstResponder()
@@ -90,6 +100,13 @@ class NewVenueViewController: UITableViewController, UITextFieldDelegate {
         } else if firstResponder == cashbackTextField {
             cashbackTextField.resignFirstResponder()
         }
+    }
+    
+    @objc private func leftAccessoryButtonTapped() {
+        guard let firstResponder = firstResponder,
+            let textValue = firstResponder.text,
+            let number = Double(textValue) else { return }
+        firstResponder.text = String(number * -1)
     }
     
     @objc private func useMyLocationTapped() {
