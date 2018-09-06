@@ -22,6 +22,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         nameTextField.delegate = self
         emailTextField.delegate = self
         activityIndicator.isHidden = true
+        
+        hideKeyboardOnTap()
     }
     
     @IBAction func signInTapped(_ sender: Any) {

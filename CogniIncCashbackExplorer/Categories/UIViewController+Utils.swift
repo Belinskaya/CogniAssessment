@@ -22,6 +22,16 @@ extension UIViewController {
         performSegue(withIdentifier: identifier.rawValue, sender: sender)
     }
     
+    func hideKeyboardOnTap() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapDetected))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc private func tapDetected() {
+        view.endEditing(true)
+    }
+    
 }
 
 

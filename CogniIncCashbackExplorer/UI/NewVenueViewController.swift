@@ -47,6 +47,8 @@ class NewVenueViewController: UITableViewController, UITextFieldDelegate {
         cityTextField.delegate = self
         latTextField.delegate = self
         
+        hideKeyboardOnTap()
+        
         let leftButtonDescription: TextFieldAccessoryButtonDescription = (title: "+/-", target: self, action: #selector(leftAccessoryButtonTapped))
         let rightNextButtonDescription: TextFieldAccessoryButtonDescription = (title: "Next", target: self, action: #selector(rightAccessoryButtonTapped))
         let rightDoneButtonDescription: TextFieldAccessoryButtonDescription = (title: "Done", target: self, action: #selector(rightAccessoryButtonTapped))
